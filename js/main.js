@@ -105,13 +105,22 @@
 	------------------------------------------------------ */
 	var containerProjects = $('#folio-wrapper');
 
+	function initMasonry() {
+		if (containerProjects.length) {
+			containerProjects.masonry({		  
+			  	itemSelector: '.folio-item',
+			  	resize: true 
+			});
+		}
+	}
+
 	containerProjects.imagesLoaded( function() {
+		initMasonry();
+	});
 
-		containerProjects.masonry( {		  
-		  	itemSelector: '.folio-item',
-		  	resize: true 
-		});
-
+	$(window).on('load', function() {
+		initMasonry();
+		setTimeout(initMasonry, 500);
 	});
 
 

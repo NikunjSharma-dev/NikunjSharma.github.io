@@ -2691,6 +2691,29 @@ header {
   color: var(--accent-cyan) !important;
 }
 
+.section-intro h5 {
+  color: var(--accent-cyan) !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.25rem !important;
+  text-transform: uppercase !important;
+  opacity: 1 !important;
+}
+
+.section-intro h2 {
+  color: #ffffff !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;
+}
+
+.section-intro .lead {
+  color: #cbd5e1 !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.8rem !important;
+  opacity: 1 !important;
+}
+
 #about {
   background: #0f172a !important;
   position: relative;
