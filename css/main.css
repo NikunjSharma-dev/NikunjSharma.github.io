@@ -2952,3 +2952,32 @@ footer {
 footer .copyright {
   color: #64748b !important;
 }
+
+/* ===================================================================
+ * 20. PRINT & PDF EXPORT DARK THEME ENFORCEMENT
+ * =================================================================== */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  body, html {
+    background-color: #0b0f19 !important;
+    color: #cbd5e1 !important;
+  }
+  #intro, #about, #resume, #portfolio, #stats, #contact, footer {
+    background-color: #0b0f19 !important;
+    color: #f8fafc !important;
+  }
+  .intro-content h1, .section-intro h2, h3, h4, h5 {
+    color: #ffffff !important;
+  }
+  .about-content .col-six, .timeline-content, .folio-item .item-wrap {
+    background: #111827 !important;
+    border: 1px solid rgba(0, 242, 254, 0.3) !important;
+  }
+  #main-nav-wrap, #go-top {
+    display: none !important;
+  }
+}
