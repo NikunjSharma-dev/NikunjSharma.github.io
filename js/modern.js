@@ -1,63 +1,57 @@
-/* ==========================================================================
-   2-Page Developer Portfolio JavaScript
-   - Theme Toggle (Dark / Light)
-   - Interactive Filter Chips on Projects Page
-   ========================================================================== */
-
+// modern.js
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
-  initProductFilters();
-});
-
-function initThemeToggle() {
-  const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+  // Theme Toggle
+  const themeToggle = document.getElementById('theme-toggle');
   
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  updateThemeIcons(savedTheme);
+  if (themeToggle) {
+    // Check saved theme
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      document.body.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️';
+    }
 
-  themeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('portfolio-theme', next);
-      updateThemeIcons(next);
-    });
-  });
-
-  function updateThemeIcons(theme) {
-    themeBtns.forEach(btn => {
-      btn.innerHTML = `🌙`;
+    themeToggle.addEventListener('click', () => {
+      if (document.body.getAttribute('data-theme') === 'dark') {
+        document.body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
+      }
     });
   }
-}
 
-/* Interactive Filter System for projects.html */
-function initProductFilters() {
-  const filterChips = document.querySelectorAll('.filter-chip');
-  const productCards = document.querySelectorAll('.product-card');
+  // Project Filtering on projects.html
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.tc-card');
 
-  if (!filterChips.length || !productCards.length) return;
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active class
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-  filterChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      filterChips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
 
-      const filterCategory = chip.getAttribute('data-filter');
-
-      productCards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        if (filterCategory === 'all' || cardCat === filterCategory) {
-          card.style.display = 'flex';
-          setTimeout(() => card.style.opacity = '1', 50);
-        } else {
-          card.style.opacity = '0';
-          card.style.display = 'none';
-        }
+        // Filter cards
+        projectCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = 'flex';
+          } else {
+            if (card.getAttribute('data-category').includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          }
+        });
       });
     });
-  });
-}
+  }
+});
