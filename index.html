@@ -3,16 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikunj Sharma | Software & AI/ML Systems Engineer @ IIT Guwahati</title>
-  <meta name="description" content="Portfolio of Nikunj Sharma — B.Tech Student at IIT Guwahati specializing in high-performance backend systems, real-time ML pipelines, and LLM context infrastructure.">
+  <title>Nikunj Sharma | Software & AI/ML Systems Engineer</title>
+  <meta name="description" content="Personal website of Nikunj Sharma — B.Tech Student at IIT Guwahati specializing in backend systems, ML pipelines, and open-source contributions.">
   <meta name="author" content="Nikunj Sharma">
-  <meta name="keywords" content="Nikunj Sharma, IIT Guwahati, Software Engineer, AI ML Engineer, FastAPI, sktime, FraudGuard, DeltaContext">
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Nikunj Sharma | Software & AI/ML Systems Engineer">
-  <meta property="og:description" content="Software & AI/ML Systems Engineer at IIT Guwahati. Active contributor to sktime.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://NikunjSharma.github.io/">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -20,496 +13,213 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Modern Design System Stylesheet -->
+  <!-- Minimalist Stylesheet -->
   <link rel="stylesheet" href="css/modern.css">
 </head>
-<body id="top">
-
-  <!-- Background Ambient Glow -->
-  <div class="bg-glow"></div>
+<body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar">
     <div class="container nav-container">
-      <a href="#top" class="nav-brand">
-        <span>NIKUNJ SHARMA</span>
-        <span class="brand-badge">IIT GUWAHATI</span>
-      </a>
+      <a href="#" class="nav-brand">Nikunj Sharma</a>
 
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#beyond" class="nav-link">Beyond Coding</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#projects" class="nav-link">projects</a></li>
+          <li><a href="#skills" class="nav-link">skills</a></li>
+          <li><a href="#beyond" class="nav-link">beyond</a></li>
+        </ul>
 
-      <div class="nav-actions">
-        <button id="cursor-toggle-btn" class="icon-btn" title="Toggle Pixel Retro Cursor" aria-label="Toggle Retro Cursor">
+        <button id="cursor-toggle-btn" class="icon-toggle-btn" title="Toggle Retro Pixel Cursor" aria-label="Toggle Retro Cursor">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l7 18 3-7 7-3L3 3z"/><path d="M13 13l6 6"/></svg>
         </button>
 
-        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+        <button id="theme-toggle-btn" class="icon-toggle-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
           <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-
-        <a href="Resume+CV/Nikunj_Sharma_CV.pdf" target="_blank" class="btn-resume">
-          <span>Resume</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          <span>Open for SDE & AI/ML Roles</span>
-        </div>
+  <!-- Hero Section (Screenshot 1 & 7 Inspired) -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">hi, I'm Nikunj <span class="wave-hand">👋</span></h1>
+      <div class="hero-subtitle">Chemical Engineering Student · IIT Guwahati</div>
 
-        <h1 class="hero-title">
-          hi, I'm Nikunj <span class="wave-emoji">👋</span>
-        </h1>
+      <p class="hero-bio">
+        I love building software, architecting backend systems, and experimenting with real-time ML pipelines to improve workflows. Active contributor to open-source machine learning frameworks like <strong>sktime</strong>.
+      </p>
 
-        <div class="hero-subtitle">
-          Chemical Engineering Student @ IIT Guwahati · SDE & AI/ML Systems Engineer
-        </div>
+      <div class="hero-pills">
+        <a href="https://linkedin.com" target="_blank" class="pill-btn">
+          <span>LinkedIn</span>
+          <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
 
-        <p class="hero-description">
-          I build high-performance backend systems, real-time ML detection pipelines, and LLM context infrastructure. Active contributor to major open-source machine learning frameworks like <strong>sktime</strong>.
-        </p>
+        <a href="Resume+CV/Nikunj_Sharma_CV.pdf" target="_blank" class="pill-btn">
+          <span>Resume</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </a>
 
-        <div class="social-pills">
-          <a href="https://linkedin.com" target="_blank" class="social-pill">
-            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            <span>LinkedIn</span>
-          </a>
+        <a href="https://github.com/NikunjSharma-dev" target="_blank" class="pill-btn">
+          <span>GitHub</span>
+          <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+        </a>
 
-          <a href="https://github.com/NikunjSharma-dev" target="_blank" class="social-pill">
-            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-            <span>GitHub</span>
-          </a>
-
-          <a href="Resume+CV/Nikunj_Sharma_CV.pdf" target="_blank" class="social-pill">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Resume</span>
-          </a>
-
-          <a href="mailto:20.nikunj.sharma@gmail.com" class="social-pill">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>Email</span>
-          </a>
-        </div>
+        <a href="mailto:20.nikunj.sharma@gmail.com" class="pill-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
       </div>
 
-      <!-- Terminal Component (Screenshot 7 Inspired) -->
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="mac-controls">
-            <span class="mac-dot red"></span>
-            <span class="mac-dot yellow"></span>
-            <span class="mac-dot green"></span>
-          </div>
-          <span class="terminal-title">nikunj@iitg: ~</span>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-          <div class="terminal-row">
-            <span class="terminal-prompt">&gt; Nikunj.location</span>
-          </div>
-          <div class="terminal-output highlight">"Guwahati, Assam, India"</div>
-
-          <div class="terminal-row" style="margin-top:8px;">
-            <span class="terminal-prompt">&gt; Nikunj.education</span>
-          </div>
-          <div class="terminal-output highlight">"B.Tech Chemical Engineering — IIT Guwahati"</div>
-
-          <div class="terminal-row" style="margin-top:8px;">
-            <span class="terminal-prompt">&gt; Nikunj.skills</span>
-          </div>
-          <div class="terminal-output highlight">["Python", "FastAPI", "XGBoost", "PostgreSQL", "Redis", "Docker", "TypeScript", "Numba JIT"]</div>
-
-          <div class="terminal-row" style="margin-top:8px;">
-            <span class="terminal-prompt">&gt; Nikunj.openSource</span>
-          </div>
-          <div class="terminal-output highlight">"sktime contributor (7.7k+ ⭐) — PR #10783"</div>
-
-          <div class="terminal-input-line">
-            <span class="terminal-prompt">&gt; Nikunj.</span>
-            <input type="text" id="terminal-input" placeholder="type 'help', 'skills', 'projects'..." autocomplete="off" spellcheck="false">
-          </div>
-        </div>
+      <!-- Minimal Code Block (Screenshot 7 Inspired) -->
+      <div class="terminal-block">
+        <div class="terminal-line"><span class="cmd">&gt; Nikunj.location</span> <span class="val">"Guwahati, Assam, India"</span></div>
+        <div class="terminal-line"><span class="cmd">&gt; Nikunj.contact</span> <span class="val">["20.nikunj.sharma@gmail.com", "LinkedIn", "GitHub"]</span></div>
+        <div class="terminal-line"><span class="cmd">&gt; Nikunj.openSource</span> <span class="val">"sktime (7.7k+ ⭐) — PR #10783"</span></div>
+        <div class="terminal-line"><span class="cmd">&gt; Nikunj.interests</span> <span class="val">["backend systems", "ML pipelines", "chess", "travelling"]</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section (Screenshots 2, 4, 5, 6 Inspired) -->
+  <!-- Recent Projects (Screenshot 2, 4 Inspired) -->
   <section id="projects" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">// FEATURED SHOWCASE</span>
-        <h2 class="section-title">Recent Projects</h2>
-        <p class="section-subtitle">Real-world AI systems, high-performance backends, and open-source contributions.</p>
+      <h2 class="section-heading">Recent projects</h2>
+
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">all</button>
+        <button class="filter-btn" data-filter="ai-systems">ai & systems</button>
+        <button class="filter-btn" data-filter="logistics">logistics</button>
+        <button class="filter-btn" data-filter="open-source">open source</button>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="filter-tabs">
-        <button class="tab-btn active" data-filter="all">All Projects</button>
-        <button class="tab-btn" data-filter="ai-systems">AI & ML Systems</button>
-        <button class="tab-btn" data-filter="logistics">Logistics & Backend</button>
-        <button class="tab-btn" data-filter="open-source">Open Source</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid">
+      <div class="projects-list">
 
         <!-- Project 1: DeltaContext -->
-        <div class="project-card" data-category="ai-systems">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">deltacontext.dev</div>
-            </div>
+        <a href="https://github.com/NikunjSharma-dev/DeltaContext" target="_blank" class="project-item" data-category="ai-systems">
+          <div class="project-thumb">
+            <img src="images/portfolio/deltacontext.jpg" alt="DeltaContext" loading="lazy">
           </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/deltacontext.jpg" alt="DeltaContext MCP Server" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">DeltaContext</h3>
-              <span class="project-badge">MCP Server</span>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="project-title">
+                <span>DeltaContext</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </h3>
             </div>
-            <p class="project-description">
-              Multimodal ETL Pipeline & Model Context Protocol (MCP) server giving LLMs persistent, searchable memory over local CSVs, PDFs, Markdown, and images using SQLite FTS5.
+            <p class="project-desc">
+              Multimodal ETL Pipeline & Model Context Protocol (MCP) server giving LLMs persistent, searchable memory over local files using SQLite FTS5.
             </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">SQLite FTS5</span>
-              <span class="tech-tag">MCP Protocol</span>
-              <span class="tech-tag">Watchdog</span>
-              <span class="tech-tag">Docker</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/NikunjSharma-dev/DeltaContext" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                <span>Source</span>
-              </a>
+            <div class="tags-row">
+              <span class="tag">Python</span>
+              <span class="tag">SQLite FTS5</span>
+              <span class="tag">MCP Protocol</span>
+              <span class="tag">Docker</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Project 2: FraudGuard -->
-        <div class="project-card" data-category="ai-systems">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">fraudguard.dev</div>
-            </div>
+        <a href="https://github.com/NikunjSharma-dev/FraudGuard" target="_blank" class="project-item" data-category="ai-systems">
+          <div class="project-thumb">
+            <img src="images/portfolio/fraudguard.jpg" alt="FraudGuard" loading="lazy">
           </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/fraudguard.jpg" alt="FraudGuard Real-Time Fraud Detection" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">FraudGuard</h3>
-              <span class="project-badge">Real-Time ML</span>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="project-title">
+                <span>FraudGuard</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </h3>
             </div>
-            <p class="project-description">
-              Real-time transaction fraud scoring engine. Hard business rules fire inside PostgreSQL, followed by async Isolation Forest + XGBoost scoring against Redis behavioral features.
+            <p class="project-desc">
+              Real-time transaction fraud detection system. Dual-layer pipeline with business rules in PostgreSQL + async Isolation Forest & XGBoost scoring in Redis.
             </p>
-            <div class="tech-tags">
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Redis</span>
-              <span class="tech-tag">XGBoost</span>
-              <span class="tech-tag">SHAP</span>
-              <span class="tech-tag">Docker</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/NikunjSharma-dev/FraudGuard" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                <span>Source</span>
-              </a>
+            <div class="tags-row">
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">XGBoost</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Project 3: FleetForge & Cargonaut -->
-        <div class="project-card" data-category="logistics">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">fleetforge.io</div>
-            </div>
+        <a href="https://github.com/NikunjSharma-dev/fleetforge" target="_blank" class="project-item" data-category="logistics">
+          <div class="project-thumb">
+            <img src="images/portfolio/fleetforge.jpg" alt="FleetForge" loading="lazy">
           </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/fleetforge.jpg" alt="FleetForge Logistics Operating System" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">FleetForge & Cargonaut</h3>
-              <span class="project-badge">Logistics SaaS</span>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="project-title">
+                <span>FleetForge</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </h3>
             </div>
-            <p class="project-description">
-              Open-source modular supply chain operating system — multi-tenant SaaS, real-time GPS fleet tracking, dispatch & Vehicle Routing Problem (VRP) optimization, and Power BI analytics.
+            <p class="project-desc">
+              Open-source modular supply chain operating system — live GPS fleet tracking, dispatch optimization, and embedded analytics.
             </p>
-            <div class="tech-tags">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">PostGIS</span>
-              <span class="tech-tag">VRP Algo</span>
-              <span class="tech-tag">Power BI</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/NikunjSharma-dev/fleetforge" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                <span>Source</span>
-              </a>
+            <div class="tags-row">
+              <span class="tag">React</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostGIS</span>
+              <span class="tag">Power BI</span>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- Project 4: sktime Open Source PR -->
-        <div class="project-card" data-category="open-source">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">github.com/sktime/sktime</div>
-            </div>
+        <a href="https://github.com/sktime/sktime/pull/10783" target="_blank" class="project-item" data-category="open-source">
+          <div class="project-thumb">
+            <img src="images/portfolio/sktime.jpg" alt="sktime open source" loading="lazy">
           </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/sktime.jpg" alt="sktime open source contribution" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">sktime (7.7k+ ⭐)</h3>
-              <span class="project-badge">Open Source</span>
+          <div class="project-info">
+            <div class="project-title-row">
+              <h3 class="project-title">
+                <span>sktime (PR #10783)</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </h3>
             </div>
-            <p class="project-description">
-              Major contribution solving NumPy 2.0+ deprecation (`np.trapz`) in `ClaSPTransformer` by engineering a pure Numba JIT trapezoidal integration engine and refactoring F1 evaluation.
+            <p class="project-desc">
+              Solved NumPy 2.0+ deprecation (`np.trapz`) in `ClaSPTransformer` by engineering a pure Numba JIT trapezoidal integration engine.
             </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Numba JIT</span>
-              <span class="tech-tag">Time Series ML</span>
-              <span class="tech-tag">NumPy 2.0</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/sktime/sktime/pull/10783" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
-                <span>PR #10783</span>
-              </a>
+            <div class="tags-row">
+              <span class="tag">Python</span>
+              <span class="tag">Numba JIT</span>
+              <span class="tag">Time Series ML</span>
+              <span class="tag">7.7k+ ⭐</span>
             </div>
           </div>
-        </div>
-
-        <!-- Project 5: DataPipe -->
-        <div class="project-card" data-category="logistics">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">datapipe.io</div>
-            </div>
-          </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/deltacontext.jpg" alt="DataPipe directory watcher" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">DataPipe</h3>
-              <span class="project-badge">ETL & Search</span>
-            </div>
-            <p class="project-description">
-              Real-time directory watcher & SQLite FTS5 search index engine with pluggable parser registry (CSV, PDF, HTML, DOCX, Code) and incremental session memory.
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">SQLite FTS5</span>
-              <span class="tech-tag">xxHash</span>
-              <span class="tech-tag">Pandas</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/NikunjSharma-dev/DataPipe" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                <span>Source</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6: Tesla DCF Financial Model -->
-        <div class="project-card" data-category="logistics">
-          <div class="browser-frame">
-            <div class="browser-bar">
-              <div class="mac-controls">
-                <span class="mac-dot red"></span>
-                <span class="mac-dot yellow"></span>
-                <span class="mac-dot green"></span>
-              </div>
-              <div class="browser-url">teslamodel.dev</div>
-            </div>
-          </div>
-          <div class="project-img-wrapper">
-            <img src="images/portfolio/merger.jpg" alt="Tesla Financial Valuation Model" loading="lazy">
-          </div>
-          <div class="project-content">
-            <div class="project-header-row">
-              <h3 class="project-title">Tesla DCF Valuation</h3>
-              <span class="project-badge">FinTech & Valuation</span>
-            </div>
-            <p class="project-description">
-              Comprehensive financial & valuation model analyzing Tesla's Enterprise Value (EV), Equity Value, and Price Per Share with detailed multi-segment forecasting (2014-2028).
-            </p>
-            <div class="tech-tags">
-              <span class="tech-tag">Financial Modeling</span>
-              <span class="tech-tag">DCF</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Excel</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://github.com/NikunjSharma-dev/Tesla-DCF-valuation-end-to-end" target="_blank" class="btn-card-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                <span>Source</span>
-              </a>
-            </div>
-          </div>
-        </div>
+        </a>
 
       </div>
-
-      <!-- Open Source Highlight Banner -->
-      <div class="os-banner">
-        <div class="os-content">
-          <h3>Active Contributor to Core Machine Learning Frameworks</h3>
-          <p>
-            Engineered Numba JIT accelerated trapezoidal integration for <strong>sktime/sktime</strong> to resolve NumPy 2.0+ deprecations, optimizing F1 classification metrics.
-          </p>
-          <div class="os-stats">
-            <div class="os-stat-item">
-              <span class="os-stat-val">7.7k+</span>
-              <span class="os-stat-lbl">sktime Stars</span>
-            </div>
-            <div class="os-stat-item">
-              <span class="os-stat-val">PR #10783</span>
-              <span class="os-stat-lbl">Merged</span>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex; justify-content:flex-end;">
-          <a href="https://github.com/sktime/sktime/pull/10783" target="_blank" class="social-pill" style="background:var(--accent-indigo); color:#fff; border:none;">
-            <span>View Pull Request ↗</span>
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">// TECH STACK & EXPERTISE</span>
-        <h2 class="section-title">Core Skills</h2>
-        <p class="section-subtitle">Technologies and tools I use to build scalable systems.</p>
-      </div>
+      <h2 class="section-heading">Skills & Stack</h2>
 
-      <div class="skills-categories">
-        
-        <!-- Category 1: Backend & Systems -->
-        <div class="skill-category-card">
-          <div class="category-header">
-            <div class="category-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-            </div>
-            <h3 class="category-title">Backend Systems</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">FastAPI</span>
-            <span class="skill-pill">Node.js</span>
-            <span class="skill-pill">C++</span>
-            <span class="skill-pill">REST APIs</span>
-            <span class="skill-pill">WebSockets</span>
-          </div>
+      <div class="skills-group">
+        <div class="skill-row">
+          <span class="skill-label">Backend</span>
+          <span class="skill-values">Python, FastAPI, Node.js, C++, REST APIs, WebSockets</span>
         </div>
-
-        <!-- Category 2: AI & ML Pipelines -->
-        <div class="skill-category-card">
-          <div class="category-header">
-            <div class="category-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12L2.1 12a10 10 0 0 0 19.8 0z"></path></svg>
-            </div>
-            <h3 class="category-title">AI & ML Pipelines</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="skill-pill">XGBoost</span>
-            <span class="skill-pill">Isolation Forest</span>
-            <span class="skill-pill">SHAP</span>
-            <span class="skill-pill">PyTorch</span>
-            <span class="skill-pill">Numba JIT</span>
-            <span class="skill-pill">Pandas</span>
-            <span class="skill-pill">NumPy</span>
-          </div>
+        <div class="skill-row">
+          <span class="skill-label">AI / ML</span>
+          <span class="skill-values">XGBoost, Isolation Forest, SHAP, PyTorch, Numba JIT, Pandas, NumPy</span>
         </div>
-
-        <!-- Category 3: Databases & Caching -->
-        <div class="skill-category-card">
-          <div class="category-header">
-            <div class="category-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-            </div>
-            <h3 class="category-title">Databases & Cache</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="skill-pill">PostgreSQL</span>
-            <span class="skill-pill">PostGIS</span>
-            <span class="skill-pill">Redis</span>
-            <span class="skill-pill">SQLite FTS5</span>
-          </div>
+        <div class="skill-row">
+          <span class="skill-label">Databases</span>
+          <span class="skill-values">PostgreSQL, PostGIS, Redis, SQLite (FTS5)</span>
         </div>
-
-        <!-- Category 4: DevOps & Tools -->
-        <div class="skill-category-card">
-          <div class="category-header">
-            <div class="category-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-            <h3 class="category-title">DevOps & Infrastructure</h3>
-          </div>
-          <div class="skill-pills">
-            <span class="skill-pill">Docker</span>
-            <span class="skill-pill">GitHub Actions CI/CD</span>
-            <span class="skill-pill">Linux / Bash</span>
-            <span class="skill-pill">MCP Protocol</span>
-            <span class="skill-pill">TypeScript</span>
-          </div>
+        <div class="skill-row">
+          <span class="skill-label">DevOps & Tools</span>
+          <span class="skill-values">Docker, Git/GitHub, GitHub Actions CI/CD, Linux, MCP Protocol</span>
         </div>
-
       </div>
     </div>
   </section>
@@ -517,74 +227,40 @@
   <!-- Beyond Coding Section (Screenshot 2 Inspired) -->
   <section id="beyond" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">// LIFE & INTERESTS</span>
-        <h2 class="section-title">Beyond Coding</h2>
-      </div>
+      <h2 class="section-heading">Beyond coding</h2>
 
-      <div class="beyond-grid">
-        <div class="beyond-card">
-          <p class="beyond-quote">
-            "When I'm not architecting backend systems or training ML detection models, you'll probably find me analyzing financial valuation models, exploring open-source projects, playing chess, or travelling."
-          </p>
-          <div class="beyond-interests">
-            <span class="interest-tag">♟️ Chess</span>
-            <span class="interest-tag">📈 Financial Modeling</span>
-            <span class="interest-tag">✈️ Travelling</span>
-            <span class="interest-tag">🏎️ Tech Research</span>
-          </div>
+      <p class="beyond-text">
+        If I'm not coding, I'm probably analyzing financial models, playing chess, watching sports, or travelling somewhere unprepared.
+      </p>
+
+      <div class="gallery-row">
+        <div class="gallery-card">
+          <img src="images/profile-pic.jpg" alt="Nikunj Sharma">
         </div>
-
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="images/profile-pic.jpg" alt="Nikunj Sharma">
-            <div class="gallery-overlay">IIT Guwahati Campus</div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/portfolio/fleetforge.jpg" alt="Logistics Dashboard">
-            <div class="gallery-overlay">Logistics Systems</div>
-          </div>
+        <div class="gallery-card">
+          <img src="images/portfolio/fleetforge.jpg" alt="FleetForge">
+        </div>
+        <div class="gallery-card">
+          <img src="images/portfolio/sktime.jpg" alt="sktime">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-card">
-        <h2>Let's Build Something Together</h2>
-        <p>
-          Currently open for Software Development Engineering (SDE) and AI/ML Engineering opportunities.
-        </p>
-        <div class="contact-actions">
-          <a href="mailto:20.nikunj.sharma@gmail.com" class="btn-email">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            <span>Say Hello (20.nikunj.sharma@gmail.com)</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer (Screenshot 4 Inspired) -->
+  <!-- Minimalist Footer (Screenshot 4 Inspired) -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <a href="https://github.com/NikunjSharma-dev" target="_blank" style="display:inline-flex; align-items:center; gap:6px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-          <span>GitHub</span>
-        </a>
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="https://github.com/NikunjSharma-dev" target="_blank">GitHub</a>
         <span>·</span>
         <a href="mailto:20.nikunj.sharma@gmail.com">Contact</a>
       </div>
-      <div class="footer-right">
+      <div>
         Last updated: August 11, 2026
       </div>
     </div>
   </footer>
 
-  <!-- Modern JS -->
   <script src="js/modern.js"></script>
 </body>
 </html>
