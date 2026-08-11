@@ -1,37 +1,39 @@
 /* ==========================================================================
-   Minimalist 2-Page Developer Portfolio CSS
-   Matching exact inspiration from imraghavojha.github.io
+   2-Page Developer Portfolio CSS
+   - Home Page (index.html)
+   - Unique Custom Product/Projects Page (projects.html)
    ========================================================================== */
 
 :root {
-  /* Matte Dark Palette */
-  --bg-primary: #121214;
-  --bg-secondary: #18181b;
-  --bg-card: #1c1c1f;
-  --bg-card-hover: #242428;
+  --bg-primary: #0d0e11;
+  --bg-secondary: #141519;
+  --bg-card: #191b20;
+  --bg-card-hover: #20232b;
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.18);
+  --border-hover: rgba(99, 102, 241, 0.4);
   
-  --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-primary: #f4f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
   
-  --accent-purple: #8b5cf6;
   --accent-indigo: #6366f1;
-  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-cyan: #06b6d4;
+  --accent-gold: #f59e0b;
+  --accent-green: #10b981;
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Outfit', sans-serif;
   --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
 
-  --nav-height: 70px;
+  --nav-height: 64px;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-full: 9999px;
 
-  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
 }
 
 [data-theme="light"] {
@@ -40,15 +42,15 @@
   --bg-card: #f9fafb;
   --bg-card-hover: #f3f4f6;
   --border-color: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
+  --border-hover: rgba(99, 102, 241, 0.4);
   
   --text-primary: #09090b;
   --text-secondary: #52525b;
   --text-muted: #a1a1aa;
 }
 
-/* Custom Retro Pixel Cursor for Whole Page (Exact match to inspiration screenshot) */
-html, body, a, button, input, select, textarea, .project-card, .pill-btn {
+/* Custom Retro Pixel Cursor for Whole Site */
+html, body, a, button, input, select, textarea, .product-card, .pill-btn, .filter-chip {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><polygon points="3,2 3,19 7.5,14.5 11,21 13.5,20 10,13.5 16,13.5" fill="%23ffffff" stroke="%23000000" stroke-width="1.5" stroke-linejoin="round"/></svg>'), pointer !important;
 }
 
@@ -58,9 +60,7 @@ html, body, a, button, input, select, textarea, .project-card, .pill-btn {
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg-primary);
@@ -74,41 +74,32 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-  border: none;
-  background: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: none; background: none; }
+img { max-width: 100%; height: auto; display: block; }
 
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* ==========================================================================
-   Header Navigation
-   ========================================================================== */
+/* Navbar */
 .navbar {
   width: 100%;
   height: var(--nav-height);
-  background-color: var(--bg-primary);
+  background-color: rgba(13, 14, 17, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: background-color var(--transition-normal);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .nav-container {
@@ -136,50 +127,34 @@ img {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-secondary);
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--text-primary);
-}
+.nav-link:hover, .nav-link.active { color: var(--text-primary); }
 
 .theme-toggle-btn {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--text-primary);
   transition: transform var(--transition-fast);
 }
 
-.theme-toggle-btn:hover {
-  transform: scale(1.1);
-}
+.theme-toggle-btn:hover { transform: scale(1.1); }
+
+main { flex: 1; }
 
 /* ==========================================================================
-   Main Content Area
+   Home Page Styles
    ========================================================================== */
-main {
-  flex: 1;
-}
-
-/* ==========================================================================
-   Home Page Hero
-   ========================================================================== */
-.hero {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
+.hero { padding: 60px 0; }
 .hero-title {
   font-family: var(--font-display);
   font-size: 3.5rem;
@@ -187,7 +162,6 @@ main {
   letter-spacing: -0.03em;
   margin-bottom: 8px;
   line-height: 1.1;
-  color: var(--text-primary);
 }
 
 .wave-hand {
@@ -209,11 +183,10 @@ main {
   font-size: 1.15rem;
   color: var(--text-secondary);
   margin-bottom: 24px;
-  font-weight: 400;
 }
 
 .hero-bio {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
   max-width: 660px;
@@ -231,12 +204,12 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 18px;
   border-radius: var(--radius-md);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: all var(--transition-fast);
 }
@@ -247,29 +220,21 @@ main {
   transform: translateY(-2px);
 }
 
-.pill-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
+.pill-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
-/* ==========================================================================
-   Home Page: Recent Projects Grid
-   ========================================================================== */
 .section-heading {
   font-family: var(--font-display);
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
-  color: var(--text-primary);
 }
 
 .recent-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .recent-card {
@@ -302,9 +267,7 @@ main {
   transition: transform 0.4s ease;
 }
 
-.recent-card:hover .recent-thumb img {
-  transform: scale(1.05);
-}
+.recent-card:hover .recent-thumb img { transform: scale(1.05); }
 
 .recent-body {
   padding: 20px;
@@ -320,21 +283,9 @@ main {
   margin-bottom: 8px;
 }
 
-.recent-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.arrow-icon {
-  width: 16px;
-  height: 16px;
-  transition: transform var(--transition-fast);
-}
-
-.recent-card:hover .arrow-icon {
-  transform: translate(3px, -3px);
-}
+.recent-title { font-size: 1.15rem; font-weight: 700; }
+.arrow-icon { width: 16px; height: 16px; transition: transform var(--transition-fast); }
+.recent-card:hover .arrow-icon { transform: translate(3px, -3px); }
 
 .recent-desc {
   font-size: 0.9rem;
@@ -344,12 +295,7 @@ main {
   flex: 1;
 }
 
-.recent-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
+.recent-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-pill {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -371,25 +317,14 @@ main {
   transition: gap var(--transition-fast);
 }
 
-.more-projects-link:hover {
-  gap: 10px;
-  color: var(--accent-indigo);
-}
+.more-projects-link:hover { gap: 10px; color: var(--accent-indigo); }
 
-/* ==========================================================================
-   Home Page: Beyond Coding Section
-   ========================================================================== */
-.beyond-section {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
+.beyond-section { margin: 60px 0; }
 .beyond-text {
   font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 28px;
-  max-width: 720px;
+  margin-bottom: 24px;
 }
 
 .gallery-grid {
@@ -406,187 +341,253 @@ main {
 }
 
 .gallery-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
 }
-
-.gallery-card:hover img {
-  transform: scale(1.05);
-}
+.gallery-card:hover img { transform: scale(1.05); }
 
 /* ==========================================================================
-   Projects Page (`projects.html`)
+   CUSTOM PRODUCT / PROJECTS PAGE (projects.html)
+   Exact match to Inspiration Screenshot 1 & Screenshot 2
    ========================================================================== */
-.projects-page-hero {
-  padding-top: 40px;
-  padding-bottom: 40px;
+.product-page-hero {
+  padding-top: 48px;
+  padding-bottom: 80px;
 }
 
-.page-title {
+.product-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.product-main-title {
   font-family: var(--font-display);
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 40px;
+  line-height: 1.1;
+  color: var(--text-primary);
 }
 
-.projects-detailed-list {
+.product-sub-opinion {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-mono);
+  margin-top: 6px;
+}
+
+.scroll-hint {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Filter Bar (Matching Screenshot 1: > filter: [ All ] [ Systems ] ...) */
+.product-filter-bar {
   display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.project-detail-card {
-  display: grid;
-  grid-template-columns: 440px 1fr;
-  gap: 36px;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 12px 18px;
+  background: rgba(25, 27, 32, 0.6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  overflow-x: auto;
 }
 
-.project-detail-card.reverse {
-  grid-template-columns: 1fr 440px;
+.filter-prompt-label {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
-.browser-mockup {
+.filter-chips-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-chip {
+  padding: 6px 16px;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.filter-chip.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: #ffffff;
+  border-color: var(--accent-indigo);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Custom Grid Cards (Matching Screenshot 1 Gaming / Trading Cards) */
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.product-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-
-.browser-header-bar {
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
-  padding: 10px 14px;
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  box-shadow: 0 10px 25px -10px rgba(0,0,0,0.5);
 }
 
-.window-dots {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-indigo);
+  box-shadow: 0 15px 35px -10px rgba(0,0,0,0.7), 0 0 25px rgba(99, 102, 241, 0.2);
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c939; }
-
-.browser-url-text {
-  flex: 1;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 3px 10px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.browser-image-container {
+/* Image Box & Overlay Tags (Matching Screenshot 2 Badge Overlay) */
+.product-img-box {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: #000;
+  background: #000000;
 }
 
-.browser-image-container img {
+.product-img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.project-detail-info h2 {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
+.product-card:hover .product-img-box img {
+  transform: scale(1.05);
+}
+
+.floating-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.overlay-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.project-subtitle-tag {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-
-.project-full-desc {
-  font-size: 0.98rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 24px;
-}
-
-.detail-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
-}
-
-.detail-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.action-btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-}
-
-.action-btn-outline:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-hover);
-}
-
-.action-btn-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
-  background: #6366f1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(13, 14, 17, 0.85);
+  backdrop-filter: blur(8px);
   color: #ffffff;
-  font-size: 0.92rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: skewX(-6deg);
+}
+
+/* Level / Elixir Badge (Matching Screenshot 1 Circle Badge) */
+.rarity-level-badge {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  border: 1.5px solid #ffffff;
+}
+
+.product-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card-title {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.product-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.product-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+.rarity-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.rarity-tag.legendary { color: var(--accent-gold); }
+.rarity-tag.epic { color: var(--accent-purple); }
+.rarity-tag.rare { color: var(--accent-cyan); }
+
+.card-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: all var(--transition-fast);
+  color: var(--accent-indigo);
+  transition: gap var(--transition-fast);
 }
 
-.action-btn-accent:hover {
-  background: #4f46e5;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-}
+.card-action-btn:hover { gap: 9px; }
 
-/* ==========================================================================
-   Footer
-   ========================================================================== */
+/* Footer */
 .footer {
   border-top: 1px solid var(--border-color);
-  padding: 40px 0;
+  padding: 36px 0;
   margin-top: 80px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
 }
 
@@ -610,22 +611,11 @@ main {
   transition: color var(--transition-fast);
 }
 
-.footer-link:hover {
-  color: var(--text-primary);
-}
+.footer-link:hover { color: var(--text-primary); }
 
-@media (max-width: 900px) {
-  .project-detail-card, .project-detail-card.reverse {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) {
+  .product-main-title { font-size: 2.2rem; }
+  .product-header-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .product-cards-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
 }

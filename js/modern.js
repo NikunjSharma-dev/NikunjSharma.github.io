@@ -1,9 +1,12 @@
 /* ==========================================================================
-   Minimalist 2-Page Developer Portfolio JavaScript
+   2-Page Developer Portfolio JavaScript
+   - Theme Toggle (Dark / Light)
+   - Interactive Filter Chips on Projects Page
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initProductFilters();
 });
 
 function initThemeToggle() {
@@ -26,11 +29,35 @@ function initThemeToggle() {
 
   function updateThemeIcons(theme) {
     themeBtns.forEach(btn => {
-      if (theme === 'light') {
-        btn.innerHTML = `🌙`;
-      } else {
-        btn.innerHTML = `🌙`;
-      }
+      btn.innerHTML = `🌙`;
     });
   }
+}
+
+/* Interactive Filter System for projects.html */
+function initProductFilters() {
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const productCards = document.querySelectorAll('.product-card');
+
+  if (!filterChips.length || !productCards.length) return;
+
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      const filterCategory = chip.getAttribute('data-filter');
+
+      productCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (filterCategory === 'all' || cardCat === filterCategory) {
+          card.style.display = 'flex';
+          setTimeout(() => card.style.opacity = '1', 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 }
