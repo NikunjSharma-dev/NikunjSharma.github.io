@@ -55,37 +55,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lightbox Modal for Beyond Coding Image Grid
-  const gridImages = document.querySelectorAll('.image-grid img');
-  if (gridImages.length > 0) {
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox-modal';
-    lightbox.innerHTML = `
-      <button class="lightbox-close" aria-label="Close">&times;</button>
-      <img src="" alt="Expanded View">
-    `;
-    document.body.appendChild(lightbox);
+  // Lightbox Modal for Beyond Coding Gallery Images
+  const galleryImages = document.querySelectorAll('.masonry-gallery img, .image-grid img, .slide img');
+  if (galleryImages.length > 0) {
+    let lightbox = document.querySelector('.lightbox-modal');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.className = 'lightbox-modal';
+      lightbox.innerHTML = `
+        <button class="lightbox-close" aria-label="Close photo">&times;</button>
+        <img src="" alt="Expanded View">
+      `;
+      document.body.appendChild(lightbox);
+    }
 
     const lightboxImg = lightbox.querySelector('img');
     const closeBtn = lightbox.querySelector('.lightbox-close');
 
-    gridImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('active');
+    const openLightbox = (src, alt) => {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Expanded View';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openLightbox(img.src, img.alt);
       });
     });
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox || e.target === closeBtn) {
-        lightbox.classList.remove('active');
+        closeLightbox();
       }
     });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        lightbox.classList.remove('active');
+        closeLightbox();
       }
     });
   }
