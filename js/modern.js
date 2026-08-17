@@ -26,31 +26,75 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Project Filtering on projects.html
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // Mode Toggle (Tech vs Non-Tech) & Category Filtering on projects.html
+  const modeBtns = document.querySelectorAll('.mode-btn');
+  const techFilterBar = document.querySelector('.filter-bar-tech');
+  const nonTechFilterBar = document.querySelector('.filter-bar-non-tech');
   const projectCards = document.querySelectorAll('.tc-card');
 
-  if (filterBtns.length > 0 && projectCards.length > 0) {
-    filterBtns.forEach(btn => {
+  let activeMode = 'tech';
+  let activeCategoryFilter = 'all';
+
+  const updateCardVisibility = () => {
+    projectCards.forEach(card => {
+      const cardMode = card.getAttribute('data-mode') || 'tech';
+      const cardCategory = card.getAttribute('data-category') || '';
+
+      const matchesMode = (cardMode === activeMode);
+      const matchesCategory = (activeCategoryFilter === 'all' || cardCategory.includes(activeCategoryFilter));
+
+      if (matchesMode && matchesCategory) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  if (modeBtns.length > 0) {
+    modeBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active class
-        filterBtns.forEach(b => b.classList.remove('active'));
+        modeBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        const filter = btn.getAttribute('data-filter');
+        activeMode = btn.getAttribute('data-mode');
+        activeCategoryFilter = 'all';
 
-        // Filter cards
-        projectCards.forEach(card => {
-          if (filter === 'all') {
-            card.style.display = 'flex';
-          } else {
-            if (card.getAttribute('data-category').includes(filter)) {
-              card.style.display = 'flex';
-            } else {
-              card.style.display = 'none';
-            }
-          }
-        });
+        // Toggle filter bars
+        if (activeMode === 'tech') {
+          if (techFilterBar) techFilterBar.style.display = 'flex';
+          if (nonTechFilterBar) nonTechFilterBar.style.display = 'none';
+        } else {
+          if (techFilterBar) techFilterBar.style.display = 'none';
+          if (nonTechFilterBar) nonTechFilterBar.style.display = 'flex';
+        }
+
+        // Reset filter button active states to 'All'
+        const currentBar = activeMode === 'tech' ? techFilterBar : nonTechFilterBar;
+        if (currentBar) {
+          const currentBtns = currentBar.querySelectorAll('.filter-btn');
+          currentBtns.forEach(b => b.classList.remove('active'));
+          const allBtn = currentBar.querySelector('[data-filter="all"]');
+          if (allBtn) allBtn.classList.add('active');
+        }
+
+        updateCardVisibility();
+      });
+    });
+  }
+
+  const allFilterBtns = document.querySelectorAll('.filter-btn');
+  if (allFilterBtns.length > 0) {
+    allFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const parentBar = btn.closest('.filter-bar');
+        if (parentBar) {
+          const parentBtns = parentBar.querySelectorAll('.filter-btn');
+          parentBtns.forEach(b => b.classList.remove('active'));
+        }
+        btn.classList.add('active');
+        activeCategoryFilter = btn.getAttribute('data-filter');
+        updateCardVisibility();
       });
     });
   }
