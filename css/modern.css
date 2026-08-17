@@ -290,22 +290,23 @@ section {
 /* Image Grid */
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
   margin-top: 2rem;
 }
 
 .image-grid img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid var(--border-color);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .image-grid img:hover {
-  transform: scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
@@ -530,4 +531,48 @@ footer {
   .hero h1 { font-size: 2.5rem; }
   .image-grid { grid-template-columns: 1fr; }
   .filter-bar { justify-content: center; }
+}
+
+/* Image Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-modal img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
 }

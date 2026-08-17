@@ -54,4 +54,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Lightbox Modal for Beyond Coding Image Grid
+  const gridImages = document.querySelectorAll('.image-grid img');
+  if (gridImages.length > 0) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox-modal';
+    lightbox.innerHTML = `
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="Expanded View">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    gridImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === closeBtn) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        lightbox.classList.remove('active');
+      }
+    });
+  }
 });
